@@ -7,4 +7,4 @@ Make sure that you have the latest versions of NodeJS and Visual Studio Code in 
 
 ### How to run this samples?
 
-open the desired samples in Visual Studio Code. Then, simply install all the necessary angular packages into your current project using the `npm install` command and run your project using the `ng serve` command.
+open this sample in Visual Studio Code. Then, simply install all the necessary angular packages into your current project using the `npm install` command and run your project using the `ng serve` command.
