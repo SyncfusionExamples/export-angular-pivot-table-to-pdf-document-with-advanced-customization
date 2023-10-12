@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, VirtualScrollService, ExportCompleteEventArgs, PDFExportService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, ExportCompleteEventArgs, PDFExportService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { PdfExportProperties } from '@syncfusion/ej2-grids';
 import { pivot_Data } from '../data';
 
 @Component({
   selector: 'app-container',
-  providers: [VirtualScrollService, PDFExportService],
+  providers: [PDFExportService],
   templateUrl: `./export-blob-data.component.html`
 })
 export class ExportBlobDataComponent implements OnInit {
@@ -21,6 +21,10 @@ export class ExportBlobDataComponent implements OnInit {
         args?.promise?.then((e: { blobData: Blob }) => {
             console.log(e.blobData);
         });
+    }
+
+    load() {
+        this.pivotGridObj.allowEngineExport = true;
     }
 
     ngOnInit(): void {

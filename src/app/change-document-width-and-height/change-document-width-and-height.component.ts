@@ -21,6 +21,10 @@ export class ChangeDocumentWidthAndHeightComponent implements OnInit {
         args.height = this.pivotGridObj.element.offsetHeight;
     }
 
+    load() {
+        this.pivotGridObj.allowEngineExport = true;
+    }
+
     ngOnInit(): void {
         this.dataSourceSettings = {
             dataSource: pivot_Data as IDataSet[],

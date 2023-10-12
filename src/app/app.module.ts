@@ -16,10 +16,8 @@ import { MultipleExportingComponent } from './multiple-exporting/multiple-export
 import { ExportBlobDataComponent } from './export-blob-data/export-blob-data.component';
 import { ExportAllPagesComponent } from './export-all-pages/export-all-pages.component';
 import { ChangePageSizeComponent } from './change-page-size/change-page-size.component';
-import { ChangeColumnWidthComponent } from './change-column-width/change-column-width.component';
+import { ChangeTableColumnWidthAndRowHeightComponent } from './change-column-width-and-row-height/change-column-width-and-row-height.component';
 import { ChangePivotTableStyleComponent } from './change-pivot-table-style/change-pivot-table-style.component';
-import { ChangeRowHeightComponent } from './change-row-height/change-row-height.component';
-import { RepeatRowHeadersComponent } from './repeat-row-headers/repeat-row-headers.component';
 
 /**
  * Module
@@ -35,8 +33,7 @@ import { RepeatRowHeadersComponent } from './repeat-row-headers/repeat-row-heade
     declarations: [AppComponent, TableExportingComponent, TableAndChartExportComponent, AddHeaderAndFooterComponent, 
         ChangePageOrientationComponent, ChangeDocumentWidthAndHeightComponent, CustomizeColumnCountComponent, 
         AddingCustomFontComponent, MultipleExportingComponent, ExportBlobDataComponent, ExportAllPagesComponent, 
-        ChangePageSizeComponent, ChangeFilenameComponent, ChangeColumnWidthComponent, ChangePivotTableStyleComponent, 
-        ChangeRowHeightComponent, RepeatRowHeadersComponent
+        ChangePageSizeComponent, ChangeFilenameComponent, ChangeTableColumnWidthAndRowHeightComponent, ChangePivotTableStyleComponent
     ],
     bootstrap: [AppComponent]
 })

@@ -19,6 +19,10 @@ export class TableAndChartExportComponent implements OnInit {
     @ViewChild('pivotview', {static: false})
     public pivotGridObj: PivotView;
 
+    load() {
+        this.pivotGridObj.allowEngineExport = true;
+    }
+
     ngOnInit(): void {
         this.dataSourceSettings = {
             dataSource: pivot_Data as IDataSet[],

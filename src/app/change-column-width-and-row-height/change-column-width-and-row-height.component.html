@@ -1,6 +1,6 @@
-<h4>Change row height</h4>
+<h4>Change column width and row height</h4>
 <div class="col-md-2"><button ej-button id='export'>Export</button></div>
 <div class="col-md-8">
     <ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings allowPdfExport='true'
-        enableVirtualization='true' (onPdfCellRender)='onPdfCellRender($event)' width=width></ejs-pivotview>
+        (onPdfCellRender)='onPdfCellRender($event)' (beforeExport)='beforeExport($event)' (load)='load()' width=width></ejs-pivotview>
 </div>
