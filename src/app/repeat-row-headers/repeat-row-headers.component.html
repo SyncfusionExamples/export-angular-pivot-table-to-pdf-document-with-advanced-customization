@@ -1,0 +1,6 @@
+<h4>Repeat row headers</h4>
+<div class="col-md-2"><button ej-button id='export'>Export</button></div>
+<div class="col-md-8">
+    <ejs-pivotview #pivotview id='PivotView' height='350' (beforeExport)='beforeExport($event)'
+        enableVirtualization='true' [dataSourceSettings]=dataSourceSettings allowPdfExport='true' width=width></ejs-pivotview>
+</div>
