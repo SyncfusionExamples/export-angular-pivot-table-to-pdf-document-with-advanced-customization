@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, IDataSet, PivotView } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, IDataSet, PivotView, PDFExportService } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { pivot_Data } from '../data';
 
 @Component({
   selector: 'app-container',
+  providers: [PDFExportService],
   templateUrl: `./multiple-exporting.component.html`
 })
 export class MultipleExportingComponent implements OnInit {
@@ -19,6 +20,14 @@ export class MultipleExportingComponent implements OnInit {
 
     @ViewChild('pivotview1')
     public pivotGridObj1: PivotView;
+
+    load() {
+      this.pivotGridObj.allowEngineExport = true;
+    }
+
+    load1() {
+      this.pivotGridObj1.allowEngineExport = true;
+    }
 
     ngOnInit(): void {
 
@@ -50,7 +59,7 @@ export class MultipleExportingComponent implements OnInit {
         this.button.appendTo('#export');
 
         this.button.element.onclick = (): void => {
-            this.firstGridPdfExport = this.pivotGridObj.grid.pdfExport({}, true);
+            this.firstGridPdfExport = this.pivotGridObj.pdfExport({}, true);
             this.firstGridPdfExport.then((pdfData: Object) => {
                 this.pivotGridObj1.pdfExport({}, false, pdfData);
             });

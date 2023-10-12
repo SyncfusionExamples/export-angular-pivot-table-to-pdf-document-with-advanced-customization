@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, VirtualScrollService, PDFExportService, BeforeExportEventArgs, IDataSet  } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, PDFExportService, BeforeExportEventArgs, IDataSet  } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { pivot_Data } from '../data';
 
 @Component({
   selector: 'app-container',
-  providers: [PDFExportService,VirtualScrollService],
+  providers: [PDFExportService],
   templateUrl: `./change-document-width-and-height.component.html`
 })
 export class ChangeDocumentWidthAndHeightComponent implements OnInit {
@@ -19,6 +19,10 @@ export class ChangeDocumentWidthAndHeightComponent implements OnInit {
     beforeExport(args: BeforeExportEventArgs) {
         args.width = this.pivotGridObj.element.offsetWidth;
         args.height = this.pivotGridObj.element.offsetHeight;
+    }
+
+    load() {
+        this.pivotGridObj.allowEngineExport = true;
     }
 
     ngOnInit(): void {

@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, IDataSet, PivotView } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, IDataSet, PivotView, PDFExportService } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { PdfExportProperties } from '@syncfusion/ej2-grids';
 import { pivot_Data } from '../data';
 @Component({
   selector: 'app-container',
+  providers: [PDFExportService],
   templateUrl: `./change-page-orientation.component.html`
 })
 export class ChangePageOrientationComponent implements OnInit {
@@ -15,6 +16,10 @@ export class ChangePageOrientationComponent implements OnInit {
 
   @ViewChild('pivotview', { static: false })
   public pivotGridObj: PivotView;
+
+  load() {
+    this.pivotGridObj.allowEngineExport = true;
+  }
 
   ngOnInit(): void {
 

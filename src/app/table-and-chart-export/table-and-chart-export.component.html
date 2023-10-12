@@ -2,5 +2,5 @@
 <div class="col-md-2"><button ej-button id='export'>Export</button></div>
 <div class="col-md-8">
     <ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings allowPdfExport='true'
-        [displayOption]='displayOption' [chartSettings]='chartSettings' width=width></ejs-pivotview>
+        [displayOption]='displayOption' [chartSettings]='chartSettings' width=width (load)='load()'></ejs-pivotview>
 </div>

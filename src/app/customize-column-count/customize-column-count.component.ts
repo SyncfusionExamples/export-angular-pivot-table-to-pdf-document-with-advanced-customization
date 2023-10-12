@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, VirtualScrollService, PDFExportService, BeforeExportEventArgs, IDataSet  } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, PDFExportService, BeforeExportEventArgs, IDataSet  } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { pivot_Data } from '../data';
 
 @Component({
   selector: 'app-container',
-  providers: [PDFExportService,VirtualScrollService],
+  providers: [PDFExportService],
   templateUrl: `./customize-column-count.component.html`
 })
 export class CustomizeColumnCountComponent implements OnInit {
@@ -14,10 +14,14 @@ export class CustomizeColumnCountComponent implements OnInit {
     public button?: Button;
 
     @ViewChild('pivotview', {static: false})
-    public pivotGridObj?: PivotView;
+    public pivotGridObj: PivotView;
 
     beforeExport(args: BeforeExportEventArgs) {
         args.columnSize = 6;
+    }
+
+    load() {
+        this.pivotGridObj.allowEngineExport = true;
     }
 
     ngOnInit(): void {

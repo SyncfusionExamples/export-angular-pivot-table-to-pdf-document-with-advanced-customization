@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, IDataSet, PivotView } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, IDataSet, PivotView, PDFExportService } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { PdfExportProperties } from '@syncfusion/ej2-grids';
 import { pivot_Data } from '../data';
 
 @Component({
   selector: 'app-container',
+  providers: [PDFExportService],
   templateUrl: `./add-header-and-footer.component.html`
 })
 export class AddHeaderAndFooterComponent implements OnInit {
@@ -44,8 +45,8 @@ export class AddHeaderAndFooterComponent implements OnInit {
                         {
                             type: 'Text',
                             value: "Pivot Table",
-                            position: { x: 0, y: 50 },
-                            style: { textBrushColor: '#000000', fontSize: 13, dashStyle:'Solid',hAlign:'Center' }
+                            position: { x: 300, y: 50 },
+                            style: { textBrushColor: '#000080', fontSize: 22, dashStyle:'Solid',hAlign:'Center' }
                         }
                     ]
                 },
@@ -53,6 +54,11 @@ export class AddHeaderAndFooterComponent implements OnInit {
                     fromBottom: 160,
                     height: 150,
                     contents: [
+                        {
+                            type: 'Line',
+                            style: { penColor: '#000080', penSize: 1, dashStyle: 'Solid' },
+                            points: { x1: 0, y1: 4, x2: 685, y2: 4 },
+                        },
                         {
                             type: 'PageNumber',
                             pageNumberType: 'Arabic',

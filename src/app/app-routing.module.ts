@@ -12,10 +12,8 @@ import { CustomizeColumnCountComponent } from './customize-column-count/customiz
 import { ExportBlobDataComponent } from './export-blob-data/export-blob-data.component';
 import { MultipleExportingComponent } from './multiple-exporting/multiple-exporting.component';
 import { ChangePageSizeComponent } from './change-page-size/change-page-size.component';
-import { ChangeColumnWidthComponent } from './change-column-width/change-column-width.component';
+import { ChangeTableColumnWidthAndRowHeightComponent } from './change-column-width-and-row-height/change-column-width-and-row-height.component';
 import { ChangePivotTableStyleComponent } from './change-pivot-table-style/change-pivot-table-style.component';
-import { ChangeRowHeightComponent } from './change-row-height/change-row-height.component';
-import { RepeatRowHeadersComponent } from './repeat-row-headers/repeat-row-headers.component';
 
 const routes: Routes = [
   {
@@ -67,21 +65,17 @@ const routes: Routes = [
     path:'changePageSize'
   },
   {
-    component:ChangeColumnWidthComponent,
-    path:'changeColumnWidth'
+    component:ChangeTableColumnWidthAndRowHeightComponent,
+    path:'changeTableColumnWidthAndRowHeight'
   },
   {
     component:ChangePivotTableStyleComponent,
     path:'changePivotTableStyle'
   },
   {
-    component:ChangeRowHeightComponent,
-    path:'changeRowHeight'
+    component:ExportBlobDataComponent,
+    path:'blobData'
   },
-  {
-    component:RepeatRowHeadersComponent,
-    path:'repeatRowHeaders'
-  }
 ];
 
 
