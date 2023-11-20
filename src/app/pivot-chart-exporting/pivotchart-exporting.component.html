@@ -1,0 +1,6 @@
+<h4>Default exporting</h4>
+<div class="col-md-2"><button ej-button id='export'>Export</button></div>
+<div class="col-md-8">
+    <ejs-pivotview #pivotview id='PivotView' height='300' width='750' [dataSourceSettings]=dataSourceSettings allowPdfExport='true'
+    [displayOption]='displayOption' width=width (load)='load()'></ejs-pivotview>
+</div>

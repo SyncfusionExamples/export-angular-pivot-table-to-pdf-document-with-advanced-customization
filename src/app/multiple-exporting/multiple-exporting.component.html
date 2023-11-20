@@ -1,8 +1,10 @@
 <h4>Multiple export</h4>
 <div class="col-md-2"><button ej-button id='export'>Export</button></div>
 <div class="col-md-8">
+    <h2>Pivot Table 1</h2>
     <ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings allowPdfExport='true'
         (load)='load()' width=width></ejs-pivotview>
+    <h2>Pivot Table 2</h2>
     <ejs-pivotview #pivotview1 id='PivotView1' [dataSourceSettings]=dataSourceSettings1 allowPdfExport='true'
         (load)='load1()'width=width></ejs-pivotview>
 </div>

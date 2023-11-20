@@ -59,10 +59,12 @@ export class MultipleExportingComponent implements OnInit {
         this.button.appendTo('#export');
 
         this.button.element.onclick = (): void => {
-            this.firstGridPdfExport = this.pivotGridObj.pdfExport({}, true);
-            this.firstGridPdfExport.then((pdfData: Object) => {
-                this.pivotGridObj1.pdfExport({}, false, pdfData);
-            });
+          // Here we export the pivot table 1 as a PDF document and save it as an object in the variable firstGridPdfExport.
+          this.firstGridPdfExport = this.pivotGridObj.pdfExport({}, true);
+          this.firstGridPdfExport.then((pdfData: Object) => {
+              // Here we export both pivot table 2 to the PDF document object "pdfData" that contains the pivot table 1 and the pivot table 2 and is exported as a downloadable file.
+              this.pivotGridObj1.pdfExport({}, false, pdfData);
+          });
         };
     }
 }

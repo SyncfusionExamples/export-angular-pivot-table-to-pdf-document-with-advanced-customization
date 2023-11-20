@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, PDFExportService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, PDFExportService, DisplayOption, IDataSet } from '@syncfusion/ej2-angular-pivotview';
 import { Button } from '@syncfusion/ej2-buttons';
 import { PdfExportProperties } from '@syncfusion/ej2-grids';
 import { pivot_Data } from '../data';
@@ -7,11 +7,12 @@ import { pivot_Data } from '../data';
 @Component({
   selector: 'app-container',
   providers: [PDFExportService],
-  templateUrl: `./exporting.component.html`
+  templateUrl: `./pivotchart-exporting.component.html`
 })
-export class TableExportingComponent implements OnInit {
+export class PivotChartExportingComponent implements OnInit {
     public width: string;
     public dataSourceSettings: IDataOptions;
+    public displayOption: DisplayOption;
     public button: Button;
 
     @ViewChild('pivotview', {static: false})
@@ -32,12 +33,13 @@ export class TableExportingComponent implements OnInit {
         };
         this.width = '100%';
 
+        this.displayOption = { view: 'Chart' } as DisplayOption;
         this.button = new Button({ isPrimary: true });
         this.button.appendTo('#export');
 
         this.button.element.onclick = (): void => {
-            let pdfExportProperties: PdfExportProperties = { fileName: 'ProductSalesReport',};
-            this.pivotGridObj.pdfExport(pdfExportProperties);
+            let pdfExportProperties: PdfExportProperties = { fileName: 'result' };
+            this.pivotGridObj.chartExport('PDF', pdfExportProperties);
         };
     }
 }

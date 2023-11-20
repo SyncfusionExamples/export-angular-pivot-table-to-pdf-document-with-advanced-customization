@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PivotViewAllModule, PivotFieldListAllModule } from '@syncfusion/ej2-angular-pivotview';
+import { GridAllModule } from '@syncfusion/ej2-angular-grids';
 import { AppComponent } from './app.component';
 import { TableExportingComponent } from './exporting/exporting.component';
+import { PivotChartExportingComponent } from './pivot-chart-exporting/pivotchart-exporting.component';
 import { TableAndChartExportComponent } from './table-and-chart-export/table-and-chart-export.component';
 import { AddHeaderAndFooterComponent } from './add-header-and-footer/add-header-and-footer.component';
 import { ChangePageOrientationComponent } from './change-page-orientation/change-page-orientation.component';
@@ -18,6 +20,9 @@ import { ExportAllPagesComponent } from './export-all-pages/export-all-pages.com
 import { ChangePageSizeComponent } from './change-page-size/change-page-size.component';
 import { ChangeTableColumnWidthAndRowHeightComponent } from './change-column-width-and-row-height/change-column-width-and-row-height.component';
 import { ChangePivotTableStyleComponent } from './change-pivot-table-style/change-pivot-table-style.component';
+import { MultiplePivotChartExportingComponent } from './multiple-pivot-chart-exporting/multiple-pivotchart-exporting.component';
+import { MultipleTableChartExportingComponent } from './multiple-pivottable-pivotchart-exporting/pivottable-pivotchart-exporting.component';
+import { ExternalTableExportingComponent } from './pivottable-with-external-table-exporting/pivottable-with-grid-exporting.component';
 
 /**
  * Module
@@ -27,13 +32,14 @@ import { ChangePivotTableStyleComponent } from './change-pivot-table-style/chang
         BrowserModule,
         PivotViewAllModule,
         PivotFieldListAllModule,
+        GridAllModule,
         RouterModule,
         AppRoutingModule
     ],
-    declarations: [AppComponent, TableExportingComponent, TableAndChartExportComponent, AddHeaderAndFooterComponent, 
-        ChangePageOrientationComponent, ChangeDocumentWidthAndHeightComponent, CustomizeColumnCountComponent, 
-        AddingCustomFontComponent, MultipleExportingComponent, ExportBlobDataComponent, ExportAllPagesComponent, 
-        ChangePageSizeComponent, ChangeFilenameComponent, ChangeTableColumnWidthAndRowHeightComponent, ChangePivotTableStyleComponent
+    declarations: [AppComponent, TableExportingComponent, PivotChartExportingComponent, TableAndChartExportComponent, AddHeaderAndFooterComponent, 
+        ChangePageOrientationComponent, ChangeDocumentWidthAndHeightComponent, CustomizeColumnCountComponent, AddingCustomFontComponent,
+        MultipleExportingComponent, MultiplePivotChartExportingComponent, MultipleTableChartExportingComponent, ExternalTableExportingComponent, ExportBlobDataComponent,
+        ExportAllPagesComponent, ChangePageSizeComponent, ChangeFilenameComponent, ChangeTableColumnWidthAndRowHeightComponent, ChangePivotTableStyleComponent
     ],
     bootstrap: [AppComponent]
 })

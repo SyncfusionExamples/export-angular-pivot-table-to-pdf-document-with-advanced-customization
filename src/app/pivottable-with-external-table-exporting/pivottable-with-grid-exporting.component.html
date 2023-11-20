@@ -1,0 +1,17 @@
+<h4>Multiple export</h4>
+<div class="col-md-2"><button ej-button id='export-btn'>Export</button></div>
+<div class="col-md-8">
+    <h2 style="text-align: center;">Pivot Table</h2>
+    <ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings allowPdfExport='true'
+        (load)='load()' width=width [displayOption]='displayOption' [chartSettings]='chartSettings'></ejs-pivotview>
+    <h2 style="text-align: center;">Data Grid</h2>
+    <ejs-grid #grid id='Grid' [dataSource]='grid_Data'
+        height='272px' [allowPdfExport]='true'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+            <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>

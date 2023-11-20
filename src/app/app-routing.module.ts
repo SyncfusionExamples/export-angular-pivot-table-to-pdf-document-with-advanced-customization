@@ -14,11 +14,19 @@ import { MultipleExportingComponent } from './multiple-exporting/multiple-export
 import { ChangePageSizeComponent } from './change-page-size/change-page-size.component';
 import { ChangeTableColumnWidthAndRowHeightComponent } from './change-column-width-and-row-height/change-column-width-and-row-height.component';
 import { ChangePivotTableStyleComponent } from './change-pivot-table-style/change-pivot-table-style.component';
+import { PivotChartExportingComponent } from './pivot-chart-exporting/pivotchart-exporting.component';
+import { MultiplePivotChartExportingComponent } from './multiple-pivot-chart-exporting/multiple-pivotchart-exporting.component';
+import { MultipleTableChartExportingComponent } from './multiple-pivottable-pivotchart-exporting/pivottable-pivotchart-exporting.component';
+import { ExternalTableExportingComponent } from './pivottable-with-external-table-exporting/pivottable-with-grid-exporting.component';
 
 const routes: Routes = [
   {
     component:TableExportingComponent,
     path:''
+  },
+  {
+    component:PivotChartExportingComponent,
+    path:'pivotChartExporting'
   },
   {
     component:ChangeFilenameComponent,
@@ -59,6 +67,18 @@ const routes: Routes = [
   {
     component:MultipleExportingComponent,
     path:'multipleExport'
+  },
+  {
+    component:MultiplePivotChartExportingComponent,
+    path:'multiplePivotChartExport'
+  },
+  {
+    component:MultipleTableChartExportingComponent,
+    path:'multiplePivotTableAndChartExport'
+  },
+  {
+    component:ExternalTableExportingComponent,
+    path:'externalTableChartExport'
   },
   {
     component:ChangePageSizeComponent,
