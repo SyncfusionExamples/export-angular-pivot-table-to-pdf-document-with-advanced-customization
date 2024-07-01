@@ -20,10 +20,10 @@ export class MultiplePivotChartExportingComponent implements OnInit {
   public button: Button;
   public firstChartPdfExport: Promise<Object>;
 
-    @ViewChild('pivotchart', {static: false})
+    @ViewChild('pivotview', {static: false})
     public pivotChartObj: PivotView;
 
-    @ViewChild('pivotchart1')
+    @ViewChild('pivotview1')
     public pivotChartObj1: PivotView;
 
     load() {
